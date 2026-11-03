@@ -1,0 +1,20 @@
+{
+  "name": "sree-teja-html",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env.local dev-server.mjs",
+    "build:css": "tailwindcss -i input.css -o styles.css --minify"
+  },
+  "engines": {
+    "node": ">=20.6"
+  },
+  "dependencies": {
+    "resend": "^6.37.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.4",
+    "tailwindcss": "^4.3.4"
+  }
+}

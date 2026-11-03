@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@source "./index.html";
+@source "./legal.html";
+@source "./site.js";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+}
+html { scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+:focus-visible { outline: 2px solid #0D5C75; outline-offset: 2px; }
+.dark :focus-visible { outline-color: #38bdf8; }
+@layer components {
+  .wrap { @apply mx-auto max-w-6xl px-5; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-medium transition hover:-translate-y-px; }
+  .btn-pri { @apply bg-[#0D5C75] text-white dark:bg-sky-400 dark:text-slate-950; }
+  .btn-acc { @apply bg-[#E67E22] text-slate-900; }
+  .btn-line { @apply border border-slate-300 dark:border-slate-700; }
+  .btn-wa { @apply bg-[#25D366] font-bold text-[#0B1F14]; }
+  .ctl { @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500; }
+  .ctl[aria-invalid="true"] { @apply border-red-600 dark:border-red-400; }
+  .err { @apply min-h-5 text-sm text-red-700 dark:text-red-300; }
+  .lbl { @apply text-sm font-medium text-slate-800 dark:text-slate-200; }
+  .muted { @apply text-slate-600 dark:text-slate-300; }
+  .faint { @apply text-slate-500 dark:text-slate-400; }
+  .card { @apply rounded-lg border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900; }
+}
